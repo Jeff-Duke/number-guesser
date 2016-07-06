@@ -14,10 +14,11 @@ var guessOutput = document.querySelector('#guess-output');
 var randomNumber = Math.round(Math.random() * 100);
 var userMessage = document.querySelector('.user-message');
 var lastGuess = document.querySelector('.last-guess')
+var clearButton = document.querySelector('#clear-button');
+var resetButton = document.querySelector('#reset-button');
+var minInput = document.querySelector('#min-input');
+var maxInput = document.querySelector('#max-input');
 
-function randomNumber() {
-  randomNumber;
-}
 
 guessButton.addEventListener('click', function(){
   lastGuess.innerText = 'Your last guess was...';
@@ -31,48 +32,34 @@ guessButton.addEventListener('click', function(){
   if (randomNumber > guessInput.value) {
     userMessage.innerText = 'Sorry, that guess is too low. Try a higher number.';
   };
-
-
-  console.log(randomNumber);
-  console.log(guessInput.value);
-
-
 });
-
-var clearButton = document.querySelector('#clear-button');
 
 clearButton.addEventListener('click', function(){
   var clearInput = document.querySelector('#user-guess');
-  clearInput.innerText = '';
+  clearInput.value = '';
 });
 
-  // var clearButton = document.querySelector('#clear-button');
-  // clearButton.addEventListener('click', function(){
-  //   guessInput.innerText = '';
-  // })};
-  //
+resetButton.addEventListener('click', function(){
+  document.location.reload(true);
+});
 
+console.log(randomNumber);
+console.log(guessInput.value);
 
+//Phase 2
+//min input text
+  //min must be number
+  //if min is greater than max return error
+  //min sets constraint on random number
+//max input text
+  //max must be a number
+  //if max is less than min
+//if guessInput.value is outside of range create error
 
+minInput.addEventListener('click' funciton(){
+  
+});
 
-
-
-                    //PHASE 1
-//User opens page
-//User enters a number from 1-100 as their guess
-//user clicks Guess button
-  //use parseInt to turn user input into a number
-  //on click, mathrandom generates number
-  //multiply by 100 to make 1-100, use mathCeil to round the number
-  //compare users guess to random number
-  //display users guess to the <h1 id="guess-output">
-  // if user number === random number - display in user-message "Congratulations you guessed it!!"
-  // if user number < random number - display in user-message “Sorry, that guess is too low. Try a higher number.”
-  // if user number > random number - display in user-message “Sorry, that guess is too high. Try a lower number.”
-
-// if user clicks clear button - clear user-guess input field
-
-// if user clicks reset button - resets the game ( no random number present)
 
 
                   //PHASE 2
@@ -89,3 +76,20 @@ clearButton.addEventListener('click', function(){
       //if user-input < min - throw error to enter a higher number
       //if user-input > max - throw error to enter a lower number
     //if user-input field is empty - disable clear and reset buttons (CSS?)
+
+    //PHASE 1
+    //User opens page
+    //User enters a number from 1-100 as their guess
+    //user clicks Guess button
+    //use parseInt to turn user input into a number
+    //on click, mathrandom generates number
+    //multiply by 100 to make 1-100, use mathCeil to round the number
+    //compare users guess to random number
+    //display users guess to the <h1 id="guess-output">
+    // if user number === random number - display in user-message "Congratulations you guessed it!!"
+    // if user number < random number - display in user-message “Sorry, that guess is too low. Try a higher number.”
+    // if user number > random number - display in user-message “Sorry, that guess is too high. Try a lower number.”
+
+    // if user clicks clear button - clear user-guess input field
+
+    // if user clicks reset button - resets the game ( no random number present)
