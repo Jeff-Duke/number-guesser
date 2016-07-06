@@ -8,6 +8,54 @@
 // If their guess is too low, it should display: “Sorry, that guess is too low. Try a higher number.”
 
 
+var guessButton = document.querySelector('#guess-button');
+var guessInput = document.querySelector('#user-guess');
+var guessOutput = document.querySelector('#guess-output');
+var randomNumber = Math.round(Math.random() * 100);
+var userMessage = document.querySelector('.user-message');
+var lastGuess = document.querySelector('.last-guess')
+
+function randomNumber() {
+  randomNumber;
+}
+
+guessButton.addEventListener('click', function(){
+  lastGuess.innerText = 'Your last guess was...';
+  guessOutput.innerText = parseInt(guessInput.value);
+  if (randomNumber == guessInput.value) {
+    userMessage.innerText = 'Congratulations you guessed it!!';
+  }
+  if (randomNumber < guessInput.value) {
+    userMessage.innerText = 'Sorry, that guess is too high. Try a lower number.';
+  }
+  if (randomNumber > guessInput.value) {
+    userMessage.innerText = 'Sorry, that guess is too low. Try a higher number.';
+  };
+
+
+  console.log(randomNumber);
+  console.log(guessInput.value);
+
+
+});
+
+var clearButton = document.querySelector('#clear-button');
+
+clearButton.addEventListener('click', function(){
+  var clearInput = document.querySelector('#user-guess');
+  clearInput.innerText = '';
+});
+
+  // var clearButton = document.querySelector('#clear-button');
+  // clearButton.addEventListener('click', function(){
+  //   guessInput.innerText = '';
+  // })};
+  //
+
+
+
+
+
 
                     //PHASE 1
 //User opens page
