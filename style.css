@@ -1,4 +1,6 @@
-p, h1, h2 {
+/*General*/
+
+p, h1, h2, h3 {
   font-family: 'Noto Sans', sans-serif;
   color: #DE4B37;
   line-height: 1.2em;
@@ -15,7 +17,13 @@ h2 {
   font-size: 3em;
   line-height: 1.5em;
   color: #4BBFA8;
+}
 
+h3 {
+  font-family: 'Galada', cursive;
+  font-size: 1.8em;
+  line-height: 1.5em;
+  color: #DE4B37;
 }
 
 p {
@@ -26,6 +34,10 @@ body {
   background-color: #F0CE60;
   text-align: center;
 }
+
+
+
+/* Buttons + Inputs */
 
 button {
   width: 44%;
@@ -43,7 +55,6 @@ button {
   transition: all 0.3s;
 }
 
-
 button:disabled, input:disabled{
   color: #433F73;
   border: 2px solid #433F73;
@@ -51,20 +62,9 @@ button:disabled, input:disabled{
   cursor: text;
 }
 
-
 button:enabled:hover {
   border: 2px solid #DE4B37;
   color: #4BBFA8;
-}
-
-section {
-  margin: 5px auto;
-  width: 500px;
-  background-color: #35325C;
-  padding-top: 10px;
-  padding-left: auto;
-  padding-right: auto;
-  border-radius: 10px;
 }
 
 .all-inputs {
@@ -86,14 +86,33 @@ section {
 
 #user-guess:focus, #max-input:focus, #min-input:focus {
   background-color: #433F73;
+  }
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #433F73;
+  }
+
+/* Sections */
+
+section {
+  margin: 10px auto;
+  max-width: 400px;
+  background-color: #35325C;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
 }
 
-/*Title*/
-.title {
 
+
+#level-indicator {
+  min-width: 200px;
 }
-
-/* Output */
+#current-level{
+  color: #F0CE60;
+  font-size: 5em
+}
 
 
 /* User Message */

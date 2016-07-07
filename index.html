@@ -11,7 +11,7 @@
 </head>
 
 <body>
-     <section>
+    <section id="game">
         <article class="Title">
             <h2>Number Guesser</h2>
             <p id="instructions"></p>
@@ -25,33 +25,33 @@
         </article>
 
         <article class="guess">
-            <input id="user-guess" class="all-inputs" value="" type="number" name="name" placeholder="YOUR BEST GUESS HERE">
+            <input id="user-guess" class="all-inputs" value="" type="number" name="name" placeholder="YOUR BEST GUESS HERE" autofocus>
             <button id="guess-button" type="button" name="button">Guess</button>
         </article>
-
-        <article class="range">
-            <h2 class="min-input">Min Value</h2>
-            <h2 class="min-input">Max Value</h2>
-            <input id="min-input" class="all-inputs" value="0" type="number" name="name" placeholder="Min Number">
-            <input id="max-input" class="all-inputs" value="100" type="number" name="name" placeholder="Max Number">
-            <button id="set-button" type="button" name="button">Set Range</button>
-        </article>
-
-        <br>
 
         <article class="restart">
             <button id="clear-button" type="button" name="button">Clear</button>
             <button id="reset-button" type="button" name="button">Reset Game</button>
         </article>
-        <br>
-
-
     </section>
 
-        <section class "level-indicator">
-            <p id="current-level"></p>
-        </section>
-      </body>
+    <section id="level-indicator">
+        <h3 id="level-text">Current Level:</h3>
+        <h1 id="current-level"></h1>
+    </section>
+
+    <section id="range">
+        <article class="range">
+            <h3>Range</h3>
+            <p class="min-input">Min Value</p>
+            <p class="min-input">Max Value</p>
+            <input id="min-input" class="all-inputs" value="0" type="number" name="name" placeholder="Min">
+            <input id="max-input" class="all-inputs" value="100" type="number" name="name" placeholder="Max">
+            <button id="set-button" type="button" name="button">Set Range</button>
+        </article>
+    </section>
+
+</body>
 <script src="script.js"></script>
 
 </html>
