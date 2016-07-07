@@ -7,6 +7,7 @@
   </head>
   <body>
     <h2>Number Guesser</h2>
+    <p> Guess a number 1-100, or, set a custom range below </p>
     <div class="output">
       <p class="last-guess"></p>
       <h1 id="guess-output"></h1>
@@ -15,11 +16,14 @@
     </div>
     <input id="user-guess" value="" type="number" name="name" placeholder="Your best guess">
     <button id="guess-button"type="button" name="button">Guess</button>
+    <br>
     <button id="clear-button" type="button" name="button">Clear</button>
     <button id="reset-button" type="button" name="button">Reset Game</button>
+    <br>
 
-    <input id="min-input" value="" type="number" name="name" placeholder="Min Number">
-    <input id="max-input" value="" type="number" name="name" placeholder="Max Number">
+    <input id="min-input" value="0" type="number" name="name" placeholder="Min Number">
+    <input id="max-input" value="100" type="number" name="name" placeholder="Max Number">
+    <button id="set-button" type="button" name="button">Set Range</button>
 
 
   </body>
