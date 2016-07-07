@@ -57,3 +57,16 @@
   // if user clicks clear button - clear user-guess input field
 
   // if user clicks reset button - resets the game ( no random number present)
+
+
+
+
+  // Phase 3
+
+
+
+  //if random number === guess add 10 to max -10 min
+  //max needs to increase by 10 maxInput +10
+  //min needs to decrease by 10 with correct guess minInput -10
+  //new random number generated with every correct guess
+  //clear guessInput
