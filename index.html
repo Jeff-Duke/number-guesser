@@ -3,27 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>Number Guesser</title>
+    <link rel="stylesheet" href="reset.css" media="screen" title="Style Sheet" charset="utf-8">
     <link rel="stylesheet" href="style.css" media="screen" title="Style Sheet" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
   </head>
   <body>
-    <h2>Number Guesser</h2>
-    <p> Guess a number 1-100, or, set a custom range below </p>
-    <div class="output">
-      <p class="last-guess"></p>
-      <h1 id="guess-output"></h1>
-      <p class="user-message"></p>
-      <p id="random-number"></p>
-    </div>
-    <input id="user-guess" value="" type="number" name="name" placeholder="Your best guess">
-    <button id="guess-button"type="button" name="button">Guess</button>
-    <br>
-    <button id="clear-button" type="button" name="button">Clear</button>
-    <button id="reset-button" type="button" name="button">Reset Game</button>
-    <br>
+    <section>
+      <article class="Title">
+        <h2>Number Guesser</h2>
+        <p> Guess a number 1-100, or, set a custom range below </p>
+      </article>
 
-    <input id="min-input" value="0" type="number" name="name" placeholder="Min Number">
-    <input id="max-input" value="100" type="number" name="name" placeholder="Max Number">
-    <button id="set-button" type="button" name="button">Set Range</button>
+      <article class="output">
+        <p class="last-guess"></p>
+        <h1 id="guess-output"></h1>
+        <p class="user-message"></p>
+        <p id="random-number"></p>
+      </article>
+
+      <article class="guess">
+        <input id="user-guess" class="all-inputs" value="" type="number" name="name" placeholder="YOUR BEST GUESS HERE">
+        <button id="guess-button"type="button" name="button">Guess</button>
+      </article>
+
+      <article class="range">
+        <h2 class="min-input">Min Value</h2>
+        <h2 class="min-input">Max Value</h2>
+        <input id="min-input" class="all-inputs" value="0" type="number" name="name" placeholder="Min Number">
+        <input id="max-input" class="all-inputs" value="100" type="number" name="name" placeholder="Max Number">
+        <button id="set-button" type="button" name="button">Set Range</button>
+      </article>
+
+      <br>
+
+      <article class="restart">
+        <button id="clear-button" type="button" name="button">Clear</button>
+        <button id="reset-button" type="button" name="button">Reset Game</button>
+      </article>
+      <br>
+
+    </section>
 
 
   </body>

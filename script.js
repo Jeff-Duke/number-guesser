@@ -48,8 +48,6 @@ guessButton.addEventListener('click', function(){
   console.log(randomNumber);
 });
 
-
-
 clearButton.addEventListener('click', function(){
   var clearInput = document.querySelector('#user-guess');
   clearInput.value = '';

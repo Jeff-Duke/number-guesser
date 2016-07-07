@@ -1,0 +1,137 @@
+p, h1, h2 {
+  font-family: 'Noto Sans', sans-serif;
+  color: #DE4B37;
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 9em;
+  font-weight: 700;
+  color: #4BBFA8;
+}
+
+h2 {
+  font-family: 'Galada', cursive;
+  font-size: 3em;
+  line-height: 1.5em;
+  color: #4BBFA8;
+
+}
+
+p {
+  font-size: 1em;
+}
+
+body {
+  background-color: #F0CE60;
+  text-align: center;
+}
+
+button {
+  width: 44%;
+  background: 0;
+  font-family: 'Noto Sans', sans-serif;
+  color: #F0CE60;
+  border: 2px solid #F0CE60;
+  border-radius: 4px;
+  height: 3em;
+  font-size: 1em;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+}
+
+
+button:disabled, input:disabled{
+  color: #433F73;
+  border: 2px solid #433F73;
+  color: ButtonShadow;
+  cursor: text;
+}
+
+
+button:enabled:hover {
+  border: 2px solid #DE4B37;
+  color: #4BBFA8;
+}
+
+section {
+  margin: 5px auto;
+  width: 500px;
+  background-color: #35325C;
+  padding-top: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  border-radius: 10px;
+}
+
+.all-inputs {
+  background-color: transparent;;
+  border: none;
+  border-bottom: 1px solid #DE4B37;
+  border-radius: 4px;
+  outline: none;
+  height: 3em;
+  font-size: 1em;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.15s;
+  color: #4BBFA8;
+  text-align: center;
+}
+
+#user-guess:focus, #max-input:focus, #min-input:focus {
+  background-color: #433F73;
+}
+
+/*Title*/
+.title {
+
+}
+
+/* Output */
+
+
+/* User Message */
+.user-message {
+  color: #E37B40;
+}
+
+
+/* Guess */
+#user-guess {
+  width: 60%;
+  border-bottom: 8px solid #2C2A4C;
+  margin: 30px auto;
+}
+
+
+#guess-button {
+  width: 90%;
+}
+
+
+
+/* Range */
+#min-input, #max-input {
+  width: 44%;
+}
+.min-input, .max-input {
+  font-size: 1em;
+  display: inline-block;
+  width: 44%;
+  color: #DE4B37;
+}
+
+/* Restart */
+.restart {
+
+}
+
+.range {
+
+}
