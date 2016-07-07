@@ -22,13 +22,11 @@ function setCurrentLevel (){
 currentLevel.innerText = ("Current Level is: " + currentLevel.value);
 }
 
-currentLevel.value = 1;
-clearButton.disabled = true;
-resetButton.disabled = true;
-setInstructions();
-setCurrentLevel();
+function clearInput (){
+  guessInput.value = '';
+}
 
-guessButton.addEventListener('click', function(){
+function guessEvent() {
   var guessInputParsed = parseInt(guessInput.value);
   var minInputParsed = parseInt(minInput.value);
   var maxInputParsed = parseInt(maxInput.value);
@@ -38,12 +36,14 @@ guessButton.addEventListener('click', function(){
   maxInput.disabled = true;
 
   if (isNaN(guessInputParsed) === true) {
+    clearInput();
     alert('Please enter a whole number');
-    pageReset();
+    //pageReset();
   }
   if (guessInputParsed < minInput.value || guessInputParsed > maxInput.value) {
+    clearInput();
     alert('Trying to cheat the system I see... Input a number within ' + minInput.value + ' and ' + maxInput.value);
-    pageReset();
+    //pageReset();
   }
   lastGuess.innerText = 'Your last guess was...';
   if (randomNumber == guessInput.value){
@@ -54,6 +54,9 @@ guessButton.addEventListener('click', function(){
   if (randomNumber > guessInput.value) {
     userMessage.innerText = 'Sorry, that guess is too low. Try a higher number.';
   }
+  if (randomNumber !== guessInput.value) {
+    clearInput();
+  }
   if (randomNumber == guessInput.value){
     minInput.value = (minInputParsed - 10);
     maxInput.value = (maxInputParsed + 10);
@@ -62,13 +65,28 @@ guessButton.addEventListener('click', function(){
     setInstructions();
     currentLevel.value++;
     setCurrentLevel();
-  };
+  }};
+
+currentLevel.value = 1;
+clearButton.disabled = true;
+resetButton.disabled = true;
+setInstructions();
+setCurrentLevel();
+
+guessButton.addEventListener('click', function(){
+  guessEvent();
   console.log(randomNumber);
 });
 
+guessInput.addEventListener('keydown', function(evt){
+  if(evt.keyCode == 13) {
+  guessEvent();
+  }
+});
+
+
 clearButton.addEventListener('click', function(){
-  var clearInput = document.querySelector('#user-guess');
-  clearInput.value = '';
+  clearInput();
 });
 
 resetButton.addEventListener('click', pageReset);
@@ -88,7 +106,14 @@ setButton.addEventListener('click', function(){
 
 });
 
-guessInput.addEventListener('change', function(){
+guessInput.addEventListener('keydown', function(){
+  if (guessInput.value !== '');
   clearButton.disabled = false;
   resetButton.disabled = false;
 });
+
+guessInput.addEventListener('keyup', function(){
+  if (guessInput.value == '')
+  clearButton.disabled = true;
+  resetButton.disabled = true;
+})
