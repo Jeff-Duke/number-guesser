@@ -1,191 +1,193 @@
 /*General*/
 
-p, h1, h2, h3 {
-  font-family: 'Noto Sans', sans-serif;
-  color: #DE4B37;
-  line-height: 1.2em;
-}
-
-h1 {
-  font-family: 'Galada', cursive;
-  font-size: 3em;
-  line-height: 1.5em;
-  color: #4BBFA8;
-}
-
-h2 {
-  font-size: 9em;
-  font-weight: 700;
-  color: #4BBFA8;
-}
-
-h3 {
-  font-family: 'Galada', cursive;
-  font-size: 1.8em;
-  line-height: 1.5em;
-  color: #DE4B37;
-}
-
-p {
-  font-size: 1em;
-}
-
 body {
-  background-color: #F0CE60;
-  text-align: center;
+    background-color: #F0CE60;
+    text-align: center;
+    position: relative;
+}
+p, h1, h2, h3 {
+    font-family: 'Noto Sans', sans-serif;
+    color: #DE4B37;
+    line-height: 1.2em;
+}
+h1 {
+    font-family: 'Galada', cursive;
+    font-size: 3em;
+    line-height: 1.5em;
+    color: #4BBFA8;
+}
+h2 {
+    font-size: 9em;
+    font-weight: 700;
+    color: #4BBFA8;
+}
+h3 {
+    font-family: 'Galada', cursive;
+    font-size: 1.8em;
+    line-height: 1.5em;
+    color: #DE4B37;
+}
+p {
+    font-size: 1em;
 }
 
 /* Buttons + Inputs */
 
 button {
-  width: 44%;
-  background: 0;
-  font-family: 'Noto Sans', sans-serif;
-  color: #F0CE60;
-  border: 2px solid #F0CE60;
-  border-radius: 4px;
-  height: 3em;
-  font-size: 1em;
-  margin: 0 0 15px 0;
-  padding: 0;
-  box-shadow: none;
-  box-sizing: content-box;
-  transition: all 0.3s;
+    width: 44%;
+    background: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: #F0CE60;
+    border: 2px solid #F0CE60;
+    border-radius: 4px;
+    height: 3em;
+    font-size: 1em;
+    margin: 0 0 15px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
 }
-
-button:disabled, input:disabled{
-  color: #433F73;
-  border: none;
-  color: ButtonShadow;
-  cursor: text;
+button:disabled, input:disabled {
+    color: #433F73;
+    border: none;
+    color: ButtonShadow;
+    cursor: text;
 }
-
 button:enabled:hover {
-  border: 2px solid #DE4B37;
-  color: #4BBFA8;
+    border: 2px solid #DE4B37;
+    color: #4BBFA8;
 }
-
 .all-inputs {
-  background-color: transparent;;
-  border: none;
-  border-bottom: 1px solid #DE4B37;
-  border-radius: 4px;
-  outline: none;
-  height: 3em;
-  font-size: 1em;
-  margin: 0 0 15px 0;
-  padding: 0;
-  box-shadow: none;
-  box-sizing: content-box;
-  transition: all 0.15s;
-  color: #4BBFA8;
-  text-align: center;
+    background-color: transparent;
+    ;
+    border: none;
+    border-bottom: 1px solid #DE4B37;
+    border-radius: 4px;
+    outline: none;
+    height: 3em;
+    font-size: 1em;
+    margin: 0 0 15px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.15s;
+    color: #4BBFA8;
+    text-align: center;
 }
-
 #user-guess:focus, #max-input:focus, #min-input:focus {
-  background-color: #433F73;
-  }
-
+    background-color: #433F73;
+}
 
 /* Sections */
 
+.container {
+    display: inline-block;
+    /*background-color: red;*/
+    max-width: 400px;
+    min-width: 300px
+}
 section {
-  display: inline-block;
-  margin: 10px 10px;
-  max-width: 400px;
-  background-color: #35325C;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 7px 0px rgba(53,50,92,0.4);
-  -moz-box-shadow: 5px 5px 7px 0px rgba(53,50,92,0.4);
-  box-shadow: 5px 5px 7px 0px rgba(53,50,92,0.4);
+    display: block;
+    margin: 10px 10px;
+    background-color: #35325C;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 7px 0px rgba(53, 50, 92, 0.4);
+    -moz-box-shadow: 5px 5px 7px 0px rgba(53, 50, 92, 0.4);
+    box-shadow: 5px 5px 7px 0px rgba(53, 50, 92, 0.4);
+}
+#level-range {
+    top: 0;
+    right: 0;
+    float: right;
 }
 
-  /* Level Section - Section 2 */
+/* Level Section - Section 2 */
 
 #level-indicator {
-  width: 300px;
-  display: inline-block;
+    width: 90%;
+    display: inline-block;
+}
+#current-level {
+    color: #F0CE60;
+    font-size: 4em;
 }
 
-#current-level{
-  color: #F0CE60;
-  font-size: 4em;
+/* User Message */
+
+.user-message, .last-guess {
+    color: #E37B40;
+}
+.user-message {
+    font-size: 1.2em;
 }
 
+/* Guess */
 
-  /* User Message */
-.user-message, .last-guess{
-  color: #E37B40;
-}
-.user-message{
-  font-size: 1.2em;
-}
-
-
-
-
-  /* Guess */
 #user-guess {
-  width: 90%;
-  border: 8px solid #2C2A4C;
-  margin: 30px auto;
-  height: 5em;
+    width: 90%;
+    border: 8px solid #2C2A4C;
+    margin: 30px auto;
+    height: 5em;
 }
-
 #guess-output {
-  height: 200px;
-  /*border: 2px solid #433F73;*/
-  background-color: #433F73;
-  margin: 10px 10px;
-}
+    min-height: 200px;
+    width: 300px;
+    /*background-color: #433F73;*/
+    margin: 10px auto;
+    word-wrap: break-word;
+    line-height: 1em;
 
+}
 #guess-button {
-  width: 90%;
+    width: 90%;
 }
 
-
-
-  /* Range */
-#range {
-  width: 300px;
-}
-
+/* Range */
 #min-input, #max-input {
-  width: 44%;
+    width: 44%;
 }
 .min-input, .max-input {
-  font-size: 1em;
-  display: inline-block;
-  width: 44%;
-  color: #DE4B37;
+    font-size: 1em;
+    display: inline-block;
+    width: 44%;
+    color: #DE4B37;
 }
-
-#level-range {
-  margin-right: 40px;
-  max-width: 300px;
-  min-width: 200px;
-  top: 0;
-  float: right;
-  display: inline-block;
-}
-
 
 /* Fixes (autofill and placeholder) */
+
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-  background-color: #433F73;
+    background-color: #433F73;
 }
-
 input::-webkit-input-placeholder {
-  color: #4BBFA8;
+    color: #4BBFA8;
 }
-
 button.color::-webkit-input-placeholder {
-  color: #4BBFA8;
+    color: #4BBFA8;
 }
 
-/*
-780
-level range*/
+/* Media Queries */
+
+@media (max-width: 800px) {
+    .container {
+        display: inline-block;
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+        position: relative;
+        background-color: #35325C;
+    }
+    section {
+      margin: 50px auto;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    #guess-output{
+      margin: auto;
+    }
+}
