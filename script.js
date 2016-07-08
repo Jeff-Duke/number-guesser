@@ -32,14 +32,22 @@ function clearOutput () {
   guessOutput.innerText = '';
 }
 
-function disableClearReset() {
+function disableClear() {
   clearButton.disabled = true;
-  resetButton.disabled = true;
 }
 
-function enableClearReset() {
+function disableReset(){
+  resetButton.disabled = true;
+
+}
+
+function enableClear() {
   clearButton.disabled = false;
+}
+
+function enableReset(){
   resetButton.disabled = false;
+
 }
 
 function guessEvent() {
@@ -55,14 +63,15 @@ function guessEvent() {
     clearInput();
     clearOutput();
     alert('Please enter a whole number');
-    disableClearReset();
+    disableClear();
+    disableReset();
     return;
   }
   if (guessInputParsed < minInput.value || guessInputParsed > maxInput.value) {
     clearInput();
     clearOutput();
     alert('Trying to cheat the system I see... Input a number within ' + minInput.value + ' and ' + maxInput.value);
-    disableClearReset();
+    disableClear();
     return;
   }
   lastGuess.innerText = 'Your last guess was...';
@@ -88,7 +97,8 @@ function guessEvent() {
   }};
 
 currentLevel.value = 1;
-disableClearReset();
+disableClear();
+disableReset();
 setInstructions();
 setCurrentLevel();
 
@@ -113,12 +123,13 @@ resetButton.addEventListener('click', function(){
 
 guessInput.addEventListener('keypress', function(){
   if (guessInput.value !== '');
-  enableClearReset();
+  enableClear();
+  enableReset();
 });
 
 guessInput.addEventListener('keyup', function(){
   if (guessInput.value == '')
-  disableClearReset();
+  disableClear();
 })
 
 
