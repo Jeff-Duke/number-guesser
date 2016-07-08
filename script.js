@@ -12,8 +12,7 @@ var setButton = document.querySelector('#set-button');
 var instructionsBox = document.querySelector('#instructions');
 var currentLevel = document.querySelector('#current-level');
 
-function pageReset (){
-  document.location.reload(true);
+function pageReset() {  document.location.reload(true);
 }
 
 function setInstructions (){
@@ -21,7 +20,7 @@ function setInstructions (){
 }
 
 function setCurrentLevel (){
-currentLevel.innerText = ("Current Level is: " + currentLevel.value);
+  currentLevel.innerText = ("Current Level is: " + currentLevel.value);
 }
 
 function clearInput (){
@@ -38,7 +37,6 @@ function disableClear() {
 
 function disableReset(){
   resetButton.disabled = true;
-
 }
 
 function enableClear() {
@@ -47,7 +45,6 @@ function enableClear() {
 
 function enableReset(){
   resetButton.disabled = false;
-
 }
 
 function guessEvent() {
