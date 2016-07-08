@@ -12,15 +12,16 @@ var lastGuess = document.querySelector('.last-guess')
 var currentLevel = document.querySelector('#current-level');
 var userMessage = document.querySelector('.user-message');
 
-function pageReset() {  document.location.reload(true);
+function pageReset (){
+  document.location.reload(true);
 }
 
 function setInstructions (){
-  instructionsBox.innerText = ('Guess a number between ' + minInput.value + ' and ' + maxInput.value + ' or, enter a new range below.');
+  instructionsBox.innerText = ('Guess a number between ' + minInput.value + ' and ' + maxInput.value);
 }
 
 function setCurrentLevel (){
-  currentLevel.innerText = ("Current Level is: " + currentLevel.value);
+  currentLevel.innerText = currentLevel.value;
 }
 
 function clearInput (){
@@ -121,6 +122,23 @@ resetButton.addEventListener('click', function(){
 setButton.addEventListener('click', function(){
   var minInputParsed = parseInt(minInput.value);
   var maxInputParsed = parseInt(maxInput.value);
+  if (isNaN(minInputParsed) === true) {
+    alert('Please enter a whole number');
+    disableClear();
+    return;
+  }
+  if (isNaN(minInputParsed) === true) {
+    alert('Please enter a whole number for the min value');
+    disableClear();
+    pageReset()
+    return;
+  }
+  if (isNaN(maxInputParsed) === true) {
+    alert('Please enter a whole number for the max value');
+    disableClear();
+    pageReset()
+    return;
+  }
   if (minInputParsed >= maxInputParsed) {
     alert('Nice try cheater... Min Range must be lower than Max Range.');
     pageReset();
