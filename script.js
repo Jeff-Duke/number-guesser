@@ -1,16 +1,16 @@
-var guessButton = document.querySelector('#guess-button');
 var guessInput = document.querySelector('#user-guess');
 var guessOutput = document.querySelector('#guess-output');
-var userMessage = document.querySelector('.user-message');
-var lastGuess = document.querySelector('.last-guess')
-var clearButton = document.querySelector('#clear-button');
-var resetButton = document.querySelector('#reset-button');
 var minInput = document.querySelector('#min-input');
 var maxInput = document.querySelector('#max-input');
 var randomNumber = Math.round((Math.random() * (maxInput.value - minInput.value) + minInput.value));
+var guessButton = document.querySelector('#guess-button');
+var clearButton = document.querySelector('#clear-button');
+var resetButton = document.querySelector('#reset-button');
 var setButton = document.querySelector('#set-button');
 var instructionsBox = document.querySelector('#instructions');
+var lastGuess = document.querySelector('.last-guess')
 var currentLevel = document.querySelector('#current-level');
+var userMessage = document.querySelector('.user-message');
 
 function pageReset() {  document.location.reload(true);
 }
