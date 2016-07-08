@@ -64,7 +64,6 @@ function guessEvent() {
     clearOutput();
     alert('Please enter a whole number');
     disableClear();
-    disableReset();
     return;
   }
   if (guessInputParsed < minInput.value || guessInputParsed > maxInput.value) {
@@ -76,6 +75,15 @@ function guessEvent() {
   }
   lastGuess.innerText = 'Your last guess was...';
   if (randomNumber == guessInput.value){
+    minInput.value = (minInputParsed - 10);
+    maxInput.value = (maxInputParsed + 10);
+    randomNumber = Math.round((Math.random() * (maxInputParsed - minInputParsed) + minInputParsed));
+    userMessage.innerText = 'Congratulations you guessed it!!';
+    setInstructions();
+    currentLevel.value++;
+    setCurrentLevel();
+    clearInput();
+    return;
   }
   if (randomNumber < guessInput.value) {
     userMessage.innerText = 'Sorry, that guess is too high. Try a lower number.';
@@ -86,15 +94,7 @@ function guessEvent() {
   if (randomNumber !== guessInput.value) {
     clearInput();
   }
-  if (randomNumber == guessInput.value){
-    minInput.value = (minInputParsed - 10);
-    maxInput.value = (maxInputParsed + 10);
-    randomNumber = Math.round((Math.random() * (maxInputParsed - minInputParsed) + minInputParsed));
-    userMessage.innerText = 'Congratulations you guessed it!!';
-    setInstructions();
-    currentLevel.value++;
-    setCurrentLevel();
-  }};
+};
 
 currentLevel.value = 1;
 disableClear();
@@ -121,29 +121,27 @@ resetButton.addEventListener('click', function(){
   pageReset();
 });
 
-guessInput.addEventListener('keypress', function(){
-  if (guessInput.value !== '');
-  enableClear();
-  enableReset();
+setButton.addEventListener('click', function(){
+  var minInputParsed = parseInt(minInput.value);
+  var maxInputParsed = parseInt(maxInput.value);
+  if (minInputParsed >= maxInputParsed) {
+    alert('Nice try cheater... Min Range must be lower than Max Range.');
+    pageReset();
+  };
+  randomNumber = Math.round((Math.random() * (maxInputParsed - minInputParsed) + minInputParsed));
+  setButton.disabled = true;
+  minInput.disabled = true;
+  maxInput.disabled = true;
+  setInstructions();
 });
 
 guessInput.addEventListener('keyup', function(){
   if (guessInput.value == '')
   disableClear();
-})
+});
 
-
-// setButton.addEventListener('click', function(){
-//   var minInputParsed = parseInt(minInput.value);
-//   var maxInputParsed = parseInt(maxInput.value);
-//   //if (minInputParsed >= maxInputParsed) {
-//     alert('Nice try cheater... Min Range must be lower than Max Range.');
-//     pageReset();
-//   };
-//   randomNumber = Math.round((Math.random() * (maxInputParsed - minInputParsed) + minInputParsed));
-//   setButton.disabled = true;
-//   minInput.disabled = true;
-//   maxInput.disabled = true;
-//   setInstructions();
-//
-// });
+guessInput.addEventListener('keypress', function(){
+  if (guessInput.value !== '');
+  enableClear();
+  enableReset();
+});
