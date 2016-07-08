@@ -94,32 +94,7 @@ function guessEvent() {
   }
 };
 
-currentLevel.value = 1;
-disableClear();
-disableReset();
-setInstructions();
-setCurrentLevel();
-
-guessButton.addEventListener('click', function(){
-  guessEvent();
-  console.log(randomNumber);
-});
-
-guessInput.addEventListener('keydown', function(evt){
-  if(evt.keyCode == 13) {
-  guessEvent();
-  }
-});
-
-clearButton.addEventListener('click', function(){
-  clearInput();
-});
-
-resetButton.addEventListener('click', function(){
-  pageReset();
-});
-
-setButton.addEventListener('click', function(){
+function setRangeEvent(){
   var minInputParsed = parseInt(minInput.value);
   var maxInputParsed = parseInt(maxInput.value);
   if (isNaN(minInputParsed) === true) {
@@ -148,6 +123,35 @@ setButton.addEventListener('click', function(){
   minInput.disabled = true;
   maxInput.disabled = true;
   setInstructions();
+};
+
+currentLevel.value = 1;
+disableClear();
+disableReset();
+setInstructions();
+setCurrentLevel();
+
+guessButton.addEventListener('click', function(){
+  guessEvent();
+  console.log(randomNumber);
+});
+
+guessInput.addEventListener('keydown', function(evt){
+  if(evt.keyCode == 13) {
+  guessEvent();
+  }
+});
+
+clearButton.addEventListener('click', function(){
+  clearInput();
+});
+
+resetButton.addEventListener('click', function(){
+  pageReset();
+});
+
+setButton.addEventListener('click', function(){
+  setRangeEvent();
 });
 
 guessInput.addEventListener('keyup', function(){
